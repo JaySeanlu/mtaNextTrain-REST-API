@@ -4,6 +4,7 @@ mtaNextTrain is a simple HTTPs Web Server that maps train updates from the NYC M
 This Java-based RESTful API converts the MTA's GTFS Protocol Buffers into JSON responses. Application launched via Spring Boot.
 
 ##Usage
+
 Requires an API token to the MTA GTFS Realtime Feed. To receive a token, register a Developer account [here](https://api.mta.info/#/landing)
 
 For Documentation on GTFS and the MTA API see below: 
@@ -11,6 +12,7 @@ For Documentation on GTFS and the MTA API see below:
 * GTFS Protocol Buffers: [Link](https://developers.google.com/transit/gtfs-realtime) 
 
 * MTA Realtime GTFS Feed: [Link](http://datamine.mta.info/sites/all/files/pdfs/GTFS-Realtime-NYC-Subway%20version%201%20dated%207%20Sep.pdf)
+
 ##Endpoints
 
 * GET **/stations**
