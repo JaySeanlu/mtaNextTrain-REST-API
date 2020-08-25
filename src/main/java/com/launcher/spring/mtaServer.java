@@ -36,7 +36,7 @@ public class mtaServer {
         if(!this.stationsLoad.stationsContainer.containsKey(realStationId)) {
             throw new IllegalArgumentException("Invalid station code");
         }
-        Station target = this.stationsLoad.stationsContainer.get(stationId);
+        Station target = this.stationsLoad.stationsContainer.get(realStationId);
         String jsonString = gson.toJson(target);
         return jsonString;
     }
