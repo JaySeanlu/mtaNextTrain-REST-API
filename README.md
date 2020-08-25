@@ -65,6 +65,8 @@ Several subway stations are grouped into complexes (i.e Court Square-23 St Stati
 
 ```
 
+---
+
 * GET **/stations/{stationId}**
 
 Returns metadata about a designated stationId's primary station (see `/stations` to see the relationship between stationId and primaryStationId)
@@ -105,6 +107,9 @@ Returns metadata about a designated stationId's primary station (see `/stations`
   ]
 }
 ```
+
+---
+
 * GET **/arrivals/{apiKey}/station/{stationId}**
 
 Returns trip update data for a designated station's primary station (see `/stations` to see the relationship between stationId and primaryStationId)
@@ -159,12 +164,17 @@ Returns trip update data for a designated station's primary station (see `/stati
 }
 ```
 
+---
+
 * GET **/routes**
 
 Returns a list of all available DAYTIME train lines across the NYC Subway System
 ```
 ["A","B","C","D","E","F","G","J","L","M","N","1","Q","2","R","3","4","5","6","7","W","Z"]
 ```
+
+---
+
 
 * GET **/arrivals/{apiKey}/route/{routeId}**
 
@@ -264,6 +274,8 @@ Note that other train lines across the specified route's feed will still be disp
   }
 }
 ```
+
+---
 
 * GET **/arrivals/{apiKey}/feed/{feedId}**
 
