@@ -21,7 +21,7 @@ For Documentation on GTFS and the MTA API see below:
 
 ##### Sample Request
 
-`https://mtanexttrain.herokuapp.com/stations``
+`https://mtanexttrain.herokuapp.com/stations`
 
 Returns metadata about all stations across the NYC Subway system. Station responses are organized by `primaryStationId` as keys 
 
