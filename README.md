@@ -17,9 +17,9 @@ For Documentation on GTFS and the MTA API see below:
 
 ## Endpoints
 
-#####  GET **/stations**
+#### GET **/stations**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/stations`
 
@@ -29,7 +29,7 @@ Several subway stations are grouped into complexes (i.e Court Square-23 St Stati
  
  If the station is a standalone and not grouped with other stations, its regular stationId takes the `primaryStationId` field
 
-###### Sample Response
+##### Sample Response
 
 ```
 {
@@ -75,15 +75,15 @@ Several subway stations are grouped into complexes (i.e Court Square-23 St Stati
 
 ---
 
-##### * GET **/stations/{stationId}**
+#### GET **/stations/{stationId}**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/stations/G22`
 
 Returns metadata about a designated stationId's primary station (see `/stations` to see the relationship between stationId and primaryStationId)
 
-###### Sample Response
+##### Sample Response
 
 ```
 {
@@ -125,9 +125,9 @@ Returns metadata about a designated stationId's primary station (see `/stations`
 
 ---
 
-##### * GET **/routes**
+#### GET **/routes**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/routes`
 
@@ -141,15 +141,15 @@ Returns a list of all available DAYTIME train lines across the NYC Subway System
 
 ---
 
-##### * GET **/arrivals/{apiKey}/station/{stationId}**
+#### GET **/arrivals/{apiKey}/station/{stationId}**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/arrivals/{REDACTED_API_KEY}/station/J21`
 
 Returns trip update data for a designated station's primary station (see `/stations` to see the relationship between stationId and primaryStationId)
 
-###### Sample Response
+##### Sample Response
 
 ```
 {
@@ -203,9 +203,9 @@ Returns trip update data for a designated station's primary station (see `/stati
 
 ---
 
-##### * GET **/arrivals/{apiKey}/route/{routeId}**
+#### GET **/arrivals/{apiKey}/route/{routeId}**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/arrivals/{REDACTED_API_KEY}/route/A`
 
@@ -213,7 +213,7 @@ Returns all trip updates on train arrivals across all primary stations throughou
 
 Note that other train lines across the specified route's feed will still be displayed for each station. (See `/arrivals/{apiKey}/feed/{feedId}` endpoint for a description of `Feed`)
 
-###### Sample Response
+##### Sample Response
 
 ```
 {
@@ -311,9 +311,9 @@ Note that other train lines across the specified route's feed will still be disp
 
 ---
 
-##### * GET **/arrivals/{apiKey}/feed/{feedId}**
+#### GET **/arrivals/{apiKey}/feed/{feedId}**
 
-###### Sample Request
+##### Sample Request
 
 `https://mtanexttrain.herokuapp.com/arrivals/{REDACTED_API_KEY}/feed/ACE`
 
@@ -323,7 +323,7 @@ The MTA organizes its realtime updates in `Feeds` which group multiple route lin
 
 Please order the `{feedId}` string in the order displayed in the above link's mappings
 
-###### Sample Response
+##### Sample Response
 
 ```
 {
