@@ -19,7 +19,7 @@ public class mtaController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings from mtaNextTrain!";
+        return "Greetings from mtaNextTrain REST API! See https://github.com/JaySeanlu/mtaNextTrain for usage instructions.";
     }
 
     @RequestMapping(value = "stations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
