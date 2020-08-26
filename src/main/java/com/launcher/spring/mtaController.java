@@ -19,7 +19,7 @@ public class mtaController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings from mtaNextTrain REST API! See https://github.com/JaySeanlu/mtaNextTrain for usage instructions.";
+        return "Greetings from mtaNextTrain REST API! See https://github.com/JaySeanlu/mtaNextTrain for API endpoints and usage documentation.";
     }
 
     @RequestMapping(value = "stations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -50,6 +50,7 @@ public class mtaController {
             return ResponseEntity.ok(run.getStationIdData(stationId));
         }
         catch(IllegalArgumentException e) {
+
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Invalid StationId: " + stationId, e);
         }

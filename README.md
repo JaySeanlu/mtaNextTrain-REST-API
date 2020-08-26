@@ -1,9 +1,9 @@
 # mtaNextTrain
 mtaNextTrain is a simple HTTPs Web Server that maps train updates from the NYC MTA Realtime Feed to provide live train arrival times by station or route
 
-This Java-based RESTful API converts the MTA's GTFS Protocol Buffers into JSON responses. 
+This Java-based RESTful API converts the MTA's GTFS Protocol Buffers into JSON responses
 
-Application launched via Spring Boot, deployed on Heroku with host url https://mtanexttrain.herokuapp.com.
+Application launched via Spring Boot, deployed on Heroku with host url https://mtanexttrain.herokuapp.com
 
 ## Usage
 
@@ -21,11 +21,11 @@ For Documentation on GTFS and the MTA API see below:
 
 ##### Sample Request
 
-`https://mtanexttrain.herokuapp.com/stations`
+`https://mtanexttrain.herokuapp.com/stations``
 
-Returns metadata about all stations across the NYC Subway system. Station responses are organized by `primaryStationId` as keys. 
+Returns metadata about all stations across the NYC Subway system. Station responses are organized by `primaryStationId` as keys 
 
-Several subway stations are grouped into complexes (i.e Court Square-23 St Station). The response object groups such complexes's stations, with one station's ID representing the entire complex as the `primaryStationId`.
+Several subway stations are grouped into complexes (i.e Court Square-23 St Station). The response object groups such complexes's stations, with one station's ID representing the entire complex as the `primaryStationId`
  
  If the station is a standalone and not grouped with other stations, its regular stationId takes the `primaryStationId` field
 
@@ -133,7 +133,7 @@ Returns metadata about a designated stationId's primary station (see `/stations`
 
 Returns a list of all available DAYTIME train lines across the NYC Subway System
 
-###### Sample Response
+##### Sample Response
 
 ```
 ["A","B","C","D","E","F","G","J","L","M","N","1","Q","2","R","3","4","5","6","7","W","Z"]
@@ -209,7 +209,7 @@ Returns trip update data for a designated station's primary station (see `/stati
 
 `https://mtanexttrain.herokuapp.com/arrivals/{REDACTED_API_KEY}/route/A`
 
-Returns all trip updates on train arrivals across all primary stations throughout a specified train route line. Individual station trip update responses are organized by `primaryStationId` as keys (see `/stations` to see the relationship between stationId and primaryStationId). 
+Returns all trip updates on train arrivals across all primary stations throughout a specified train route line. Individual station trip update responses are organized by `primaryStationId` as keys (see `/stations` to see the relationship between stationId and primaryStationId) 
 
 Note that other train lines across the specified route's feed will still be displayed for each station. (See `/arrivals/{apiKey}/feed/{feedId}` endpoint for a description of `Feed`)
 
@@ -317,11 +317,11 @@ Note that other train lines across the specified route's feed will still be disp
 
 `https://mtanexttrain.herokuapp.com/arrivals/{REDACTED_API_KEY}/feed/ACE`
 
-Returns all trip updates on train arrivals across all primary stations throughout a specified feed. Individual station trip update responses are organized by `primaryStationId` as keys (see `/stations` to see the relationship between stationId and primaryStationId). 
+Returns all trip updates on train arrivals across all primary stations throughout a specified feed. Individual station trip update responses are organized by `primaryStationId` as keys (see `/stations` to see the relationship between stationId and primaryStationId)
 
-The MTA organizes its realtime updates in `Feeds` which group multiple route lines. For all available feed groupings, see [here](https://api.mta.info/#/subwayRealTimeFeeds) (MTA Developer Login required). 
+The MTA organizes its realtime updates in `Feeds` which group multiple route lines. For all available feed groupings, see [here](https://api.mta.info/#/subwayRealTimeFeeds) (MTA Developer Login required)
 
-Please order the `{feedId}` string in the order displayed in the above link's mappings
+Please order the `{feedId}` string in the order as displayed in the MTA Developer Portal's interface.
 
 ##### Sample Response
 
