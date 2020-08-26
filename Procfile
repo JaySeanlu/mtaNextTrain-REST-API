@@ -1,1 +1,1 @@
-web: java -Dserver.port=${PORT:8080} -jar comment-store/target/sbb-comment-app.jar
+web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
