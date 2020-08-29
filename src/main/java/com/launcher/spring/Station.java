@@ -44,7 +44,7 @@ public class Station {
 
     public Map<String, Object> toMapDict() {
         Map<String, Object> stationsDict = new HashMap<>();
-        stationsDict.put("stop_id", this.primaryStationId);
+        stationsDict.put("primaryStationId", this.primaryStationId);
         Map<String, Map<String, Double>> locations = new HashMap<>();
         Set<String> namesCache = new HashSet<>();
 
@@ -63,7 +63,7 @@ public class Station {
             namesCache.add(node.stop_name);
         }
         stationsDict.put("stop_name", new String(stationNameBuild));
-        stationsDict.put("stops" ,locations);
+        stationsDict.put("stationsNodeList" ,locations);
         stationsDict.put("availableRoutes", availableRoutes);
         return stationsDict;
     }

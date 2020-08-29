@@ -27,8 +27,16 @@ public class StationLoad {
         this.routeStationMapper = mapAvaiRoutes(routesPath);
     }
 
-    public Map<String, Station> getStationsDict() {
-        return this.stationsContainer;
+    public Map<String, Map<String, Object>> getStationsDict() {
+        Map<String, Map<String, Object>> stationsMapped = new HashMap<>();
+        for(Map.Entry<String, Station> entry : this.stationsContainer.entrySet()) {
+            String key = entry.getKey();
+            Station value = entry.getValue();
+
+            stationsMapped.put(key, value.toMapDict());
+        }
+
+        return stationsMapped;
     }
 
     private Map<String, String> loadTransfersMapping(String path) throws IOException {

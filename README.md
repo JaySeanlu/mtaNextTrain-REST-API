@@ -33,42 +33,44 @@ Several subway stations are grouped into complexes (i.e Court Square-23 St Stati
 
 ```
 {
-  "253": {
-    "primaryStationId": "253",
-    "stationsNodeList": [
-      {
-        "stop_id": "253",
-        "stop_name": "Rockaway Av",
-        "location": {
-          "stop_lon": -73.908946,
-          "stop_lat": 40.662549
-        }
-      }
-    ],
-    "availableRoutes": [
-      "3"
-    ]
-  },
+    "J21": {
+        "availableRoutes": [
+            "J",
+            "Z"
+        ],
+        "primaryStationId": "J21",
+        "stationsNodeList": {
+            "J21": {
+                "stop_lon": -73.880039,
+                "stop_lat": 40.68141
+            }
+        },
+        "stop_name": "Norwood Av"
+    },
 
-  ...
+    ...
 
-  "J21": {
-    "primaryStationId": "J21",
-    "stationsNodeList": [
-      {
-        "stop_id": "J21",
-        "stop_name": "Norwood Av",
-        "location": {
-          "stop_lon": -73.880039,
-          "stop_lat": 40.68141
-        }
-      }
-    ],
-    "availableRoutes": [
-      "J",
-      "Z"
-    ]
-  }
+    "G14": {
+        "availableRoutes": [
+            "R",
+            "E",
+            "F",
+            "7",
+            "M"
+        ],
+        "primaryStationId": "G14",
+        "stationsNodeList": {
+            "710": {
+                "stop_lon": -73.891394,
+                "stop_lat": 40.746848
+            },
+            "G14": {
+                "stop_lon": -73.891338,
+                "stop_lat": 40.746644
+            }
+        },
+        "stop_name": "74 St - Broadway / Jackson Hts - Roosevelt Av"
+    }
 }
 
 ```
@@ -87,39 +89,39 @@ Returns metadata about a designated stationId's primary station (see `/stations`
 
 ```
 {
-  "primaryStationId": "G22",
-  "stationsNodeList": [
-    {
-      "stop_id": "719",
-      "stop_name": "Court Sq",
-      "location": {
-        "stop_lon": -73.945264,
-        "stop_lat": 40.747023
-      }
-    },
-    {
-      "stop_id": "F09",
-      "stop_name": "Court Sq",
-      "location": {
-        "stop_lon": -73.946,
-        "stop_lat": 40.747846
-      }
-    },
-    {
-      "stop_id": "G22",
-      "stop_name": "Court Sq - 23 St",
-      "location": {
-        "stop_lon": -73.943832,
-        "stop_lat": 40.746554
-      }
-    }
-  ],
-  "availableRoutes": [
-    "E",
-    "G",
-    "7",
-    "M"
-  ]
+    "primaryStationId": "G22",
+    "stationsNodeList": [
+        {
+            "stop_id": "719",
+            "stop_name": "Court Sq",
+            "location": {
+                "stop_lon": -73.945264,
+                "stop_lat": 40.747023
+            }
+        },
+        {
+            "stop_id": "F09",
+            "stop_name": "Court Sq",
+            "location": {
+                "stop_lon": -73.946,
+                "stop_lat": 40.747846
+            }
+        },
+        {
+            "stop_id": "G22",
+            "stop_name": "Court Sq - 23 St",
+            "location": {
+                "stop_lon": -73.943832,
+                "stop_lat": 40.746554
+            }
+        }
+    ],
+    "availableRoutes": [
+        "E",
+        "G",
+        "7",
+        "M"
+    ]
 }
 ```
 
