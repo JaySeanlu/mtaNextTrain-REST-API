@@ -60,7 +60,7 @@ public class TripStationRouter {
             }
             MappedStation sortedStation = stationFeed.sortTrains();
             resultingMappedStations.put(sortedStation.Station.primaryStationId, sortedStation);
-            System.out.println(sortedStation.toJSONString());
+            //System.out.println(sortedStation.toJSONString());
         }
         return resultingMappedStations;
     }
@@ -86,7 +86,6 @@ public class TripStationRouter {
             }
             String sortedStation = stationFeed.sortTrains().toJSONString();
             resultingJSONString.add(sortedStation);
-            System.out.println(sortedStation);
         }
         return resultingJSONString;
     }
@@ -101,7 +100,13 @@ public class TripStationRouter {
         JSONObject nyctTripDesc = tripUpdate.getJSONObject("trip").getJSONObject("nyctTripDescriptor");
 
         //Each feed will give us the Direction and Route for each Arrival
-        String direction = (nyctTripDesc.has("direction")) ? "SOUTH" : "NORTH";
+        String direction = "NORTH"; //= (nyctTripDesc.has("direction")) ? "SOUTH" : "NORTH";
+        if(nyctTripDesc.has("direction")) {
+            String response = nyctTripDesc.getString("direction");
+            if(response.equals("SOUTH")) {
+                direction = "SOUTH";
+            }
+        }
         String routeId = (String) tripUpdate.getJSONObject("trip").get("routeId");
 
         //Now look at every TripUpdate get pull the StationID - put into the HashMap if it's the first update for the station, else append it the updated station's arrivalList
