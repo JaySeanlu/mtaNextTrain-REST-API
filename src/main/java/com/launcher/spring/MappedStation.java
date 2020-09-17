@@ -75,12 +75,9 @@ public class MappedStation {
     }
 
     public void addTrain(String direction, String routeId, long arrival, long updateTime) throws IllegalArgumentException{
-        String routeIDUpper = routeId.toUpperCase();
+        String routeIDUpper = routeClean(routeId.toUpperCase());
 
-        //S train takes the "FS" routeId strangely
-        if(routeId.equals("FS")) {
-            routeIDUpper = "S";
-        }
+        //S train takes the "FS" routeId strangel
 
         routesSet.add(routeIDUpper);
         routeArrival currRouteArrival = new routeArrival(routeIDUpper, arrival, updateTime);
@@ -93,6 +90,18 @@ public class MappedStation {
         else {
             throw new IllegalArgumentException("Direction must be value 'SOUTH' or 'NORTH'");
         }
+    }
+
+    private String routeClean(String routeId) {
+        if(routeId.equals("FS") || routeId.equals("GS")) {
+            return "S";
+        }
+
+        else if (routeId.equals("6X") || routeId.equals("7X")) {
+            return Character.toString(routeId.charAt(0));
+        }
+
+        return routeId;
     }
 
     //Sort for earliest arrivals per northbound/southbound trains - the comparator is using Epoch time
