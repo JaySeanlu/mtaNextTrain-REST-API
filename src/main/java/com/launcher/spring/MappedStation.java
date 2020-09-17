@@ -97,9 +97,9 @@ public class MappedStation {
             return "S";
         }
 
-        else if (routeId.equals("6X") || routeId.equals("7X")) {
-            return Character.toString(routeId.charAt(0));
-        }
+//        else if (routeId.equals("6X") || routeId.equals("7X")) {
+//            return Character.toString(routeId.charAt(0));
+//        }
 
         return routeId;
     }
