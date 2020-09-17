@@ -76,6 +76,12 @@ public class MappedStation {
 
     public void addTrain(String direction, String routeId, long arrival, long updateTime) throws IllegalArgumentException{
         String routeIDUpper = routeId.toUpperCase();
+
+        //S train takes the "FS" routeId strangely
+        if(routeId.equals("FS")) {
+            routeIDUpper = "S";
+        }
+
         routesSet.add(routeIDUpper);
         routeArrival currRouteArrival = new routeArrival(routeIDUpper, arrival, updateTime);
         if(direction == "NORTH") {
