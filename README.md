@@ -3,6 +3,8 @@ mtaNextTrain is a simple HTTPs Web Server that maps train updates from the NYC M
 
 This Java-based RESTful API converts the MTA's GTFS Protocol Buffers into JSON responses
 
+Usage visualized in [mtaNextTrain iOS App](https://github.com/JaySeanlu/mtaNextTrain)
+
 Application launched via Spring Boot, deployed on Heroku with host url https://mtanexttrain.herokuapp.com
 
 ## Usage
